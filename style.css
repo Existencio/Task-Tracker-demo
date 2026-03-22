@@ -1,4 +1,42 @@
-.completed{
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#task-items{
+    list-style: none; /* убираем браузерные стили */
+    padding: 0;
+    margin-top: 24px;
+}
+
+.task-item{
+    margin-bottom: 8px; /* нижний отступ */
+    display: flex; /* создаём флексбокс */
+    gap: 8px; /* создаём промежуток между flex-элементами */
+    align-items: center;  /* выравниваем flex-элементы по вертикали по центру */
+}
+
+.task-text{
+    /*flex: 1; - будем использовать позже*/
+}
+
+.delete-button{
+    padding: 2px;
+}
+
+.completed .task-text {
     text-decoration: line-through;
     opacity: 0.65; /* opacity принимает значения от 0 до 1 */
+    color: rgb(73, 188, 171);
+}
+
+.delete-button:hover{
+    cursor: pointer; /* добавляем "пальчик" при наведении на кнопку "Удалить задачу" */
+}
+
+.task-item input{
+    cursor: pointer; /* добавляем "пальчик" при наведении на чекбокс */
+}
+
+.add-task{
+        cursor: pointer; /* добавляем "пальчик" при наведении на кнопку "Добавить задачу" */
 }
