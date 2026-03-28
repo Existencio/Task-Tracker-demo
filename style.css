@@ -38,5 +38,9 @@ body {
 }
 
 .add-task{
-        cursor: pointer; /* добавляем "пальчик" при наведении на кнопку "Добавить задачу" */
+    cursor: pointer; /* добавляем "пальчик" при наведении на кнопку "Добавить задачу" */
+}
+
+.filter-active{
+    background-color: coral;
 }

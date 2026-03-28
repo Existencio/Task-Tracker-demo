@@ -52,25 +52,33 @@ filterAllButton.addEventListener('click', function() {
     const allTasks = document.querySelectorAll('.task-item'); // allTasks теперь содержит все элементы задач (находит по css классу .task-item)
 
     allTasks.forEach(function(task) {
-    task.style.display = 'flex'; // делаем DOM-объект видимым (про style читай ниже)
-    }); 
+        task.style.display = 'flex'; // делаем DOM-объект видимым (про style читай ниже)
+    });
     /*
     style - это объект встроенных inline-стилей именно этого элемента
     через .style JavaScript может менять CSS прямо у конкретного DOM-элемента
     */
 
+    const allFilterButtons = document.querySelectorAll('.task-filter-btn'); // находим по CSS классу '.task-filter-btn' все кнопки, управляющие фильтрами  
+
+    allFilterButtons.forEach(function(button) { // циклом проходимся по каждому элементу класса (кнопке) и применяем к каждой функцию (с параметром button)
+        button.classList.remove('filter-active'); // убираем у каждой кнопки класс 'filter-active'
+    });
+
+    filterAllButton.classList.add('filter-active'); // присваиваем CSS класс 'filter-active' только для кнопки "Все задачи"
+
 });
 
 filterActiveButton.addEventListener('click', function() {
 
-    const allTasks = document.querySelectorAll('.task-item');
-    allTasks.forEach(function(task) { // forEach(...) — пройтись по каждой задаче. function(task) — функция, которая выполнится для каждой задачи
+    const allTasks = document.querySelectorAll('.task-item'); // allTasks теперь содержит все элементы задач (находит по css классу .task-item)
+    allTasks.forEach(function(task) { // forEach(...) — пройтись циклом по каждой задаче. function(task) — функция, которая выполнится для каждой задачи
         const checkbox = task.querySelector('input'); // создаём переменную, в ней будет checkbox текущей задачи. task — текущая задача, querySelector('input') — найти внутри этой задачи элемент input
         if (checkbox.checked === false) { // проверяем прожат ли чекбокс
-        task.style.display = 'flex';
-    } else {
-        task.style.display = 'none';
-    }
+            task.style.display = 'flex'; // если не прожат, то отображаем элемент task
+        } else {
+            task.style.display = 'none'; // в противном случае не отображаем
+        }
 
     });
     /*
@@ -79,19 +87,35 @@ filterActiveButton.addEventListener('click', function() {
     имя task — это просто имя для текущего элемента
     */
 
+    const allFilterButtons = document.querySelectorAll('.task-filter-btn'); // находим по CSS классу '.task-filter-btn' все кнопки, управляющие фильтрами  
+
+    allFilterButtons.forEach(function (button) { // циклом проходимся по каждому элементу класса (кнопке) и применяем к каждой функцию (с параметром button)
+        button.classList.remove('filter-active'); // убираем у каждой кнопки класс 'filter-active'
+    });
+
+    filterActiveButton.classList.add('filter-active'); // присваиваем CSS класс 'filter-active' только для кнопки "Активные"
+
 });
 
 filterCompletedButton.addEventListener('click', function() {
-    
-    const allTasks = document.querySelectorAll('.task-item'); 
-    allTasks.forEach(function(task){
+
+    const allTasks = document.querySelectorAll('.task-item'); // allTasks теперь содержит все элементы задач (находит по css классу .task-item)
+    allTasks.forEach(function(task) {
         const checkbox = task.querySelector('input');
-        if (checkbox.checked === true) {
-        task.style.display = 'flex';
-    } else {
-        task.style.display = 'none';
-    }
+        if (checkbox.checked === true) { // проверяем прожат ли чекбокс
+            task.style.display = 'flex'; // если не прожат, то отображаем элемент task
+        } else {
+            task.style.display = 'none'; // в противном случае не отображаем
+        }
 
     });
+
+    const allFilterButtons = document.querySelectorAll('.task-filter-btn'); // находим по CSS классу '.task-filter-btn' все кнопки, управляющие фильтрами  
+    
+    allFilterButtons.forEach(function (button) { // циклом проходимся по каждому элементу класса (кнопке) и применяем к каждой функцию (с параметром button)
+        button.classList.remove('filter-active'); // убираем у каждой кнопки класс 'filter-active'
+    });
+
+    filterCompletedButton.classList.add('filter-active'); // присваиваем CSS класс 'filter-active' только для кнопки "Выполненные"
 
 });
