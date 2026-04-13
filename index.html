@@ -10,24 +10,24 @@
 <body>
     <main>
 
-        <h1>Что сегодня по задачам?</h1>
+        <h1>TO DO TO DAY</h1>
 
         <form class="task-form">
-            <label for="new-task-input">Новая задача:</label>
-            <input id="new-task-input" name="task" type="text" placeholder="Какая задача на сегодня?">
+            <label for="task-input">Новая задача:</label>
+            <input id="task-input" name="task" type="text" placeholder="Какая задача на сегодня?">
             <button class="add-task" type="submit">Добавить</button>
         </form>
 
         <div class="filters" id="filters">
             <p>Фильтры</p>
-            <button class="task-filter-btn filter-active" id="filter-all" type="button">Все задачи</button>
-            <button class="task-filter-btn" id="filter-active" type="button">Активные</button>     
-            <button class="task-filter-btn" id="filter-completed" type="button">Выполненные</button>
+            <button class="task-filter-btn filter-highlighted" id="filter-all-button" type="button">Все задачи</button> <!-- класс filter-highlighted нужен для подсветки активной кнопки. у кнопки "Все задачи" он есть по умолчанию т.к. она изначально выбрана и подсвечена-->
+            <button class="task-filter-btn" id="filter-active-button" type="button">Активные</button>     <!-- у остальных кнопок он добавляется/удаляется при клике-->
+            <button class="task-filter-btn" id="filter-completed-button" type="button">Выполненные</button> <!-- что реализовано через JS-->
             <p id="active-tasks-count">Активных задач: 0</p>
         </div>
 
         <div class="task-list">
-            <ul id="task-items">
+            <ul id="task-list">
             </ul>
         </div>
 
