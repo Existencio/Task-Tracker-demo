@@ -81,10 +81,15 @@ h1 {
     padding: 2px;
 }
 
+.completed {
+    background: #f1f5f9;
+}
+
+
 .completed .task-text {
     text-decoration: line-through;
-    opacity: 0.65; /* opacity принимает значения от 0 до 1 */
-    color: rgb(73, 188, 171);
+    opacity: 0.55;
+    color: #64748b;
 }
 /* 
 почему тут два класса?:
@@ -94,12 +99,46 @@ h1 {
 Так стиль зачёркивания и цвета применяется только к тексту выполненных задач, а не ко всем текстам.
 */
 
-.delete-button:hover{
-    cursor: pointer; /* добавляем "пальчик" при наведении на кнопку "Удалить задачу" */
+.delete-button {
+    border: none;
+    border-radius: 12px;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(239, 68, 68, 0.18);
+    transition: transform 0.2s ease;
 }
 
-.task-item input{
-    cursor: pointer; /* добавляем "пальчик" при наведении на чекбокс */
+.delete-button:hover {
+    transform: translateY(-2px);
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+}
+
+.task-item input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: #2563eb;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 22px;
+    word-break: break-word;
 }
 
 .add-task{
@@ -124,6 +163,56 @@ h1 {
     transform: translateY(-1px);
 }
 
-.filter-highlighted{
-    background-color: coral;
+.filters {
+    margin-bottom: 24px;
+    padding-top: 8px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.filters p:first-child { 
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 16px;
+}
+
+.task-filter-btn {
+    border: 1px solid #d1d5db;
+    background: #f8fafc;
+    color: #334155;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.task-filter-btn:hover {
+    transform: translateY(-1px);
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.filter-highlighted {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 10px 20px rgba(249, 115, 22, 0.22);
+}
+
+#active-tasks-count {
+    margin-top: 14px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
