@@ -1,5 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px 16px;
     font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #eaf1ff 0%, #f7f9fc 100%);
+    color: #1f2937;
+}
+
+main {
+    width: 100%;
+    max-width: 760px;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+    padding: 40px 32px;
+}
+
+h1 {
+    margin: 0 0 32px;
+    text-align: center;
+    font-size: 48px;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    color: #304d8c;
+}
+
+.task-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.task-form label {
+    grid-column: 1 / -1;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#task-input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #d1d5db;
+    border-radius: 14px;
+    padding: 0 16px;
+    font-size: 18px;
+    outline: none;
+}
+
+#task-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
 }
 
 #task-list{
@@ -45,7 +103,25 @@ body {
 }
 
 .add-task{
+    height: 50px;
+    border: none;
+    border-radius: 14px;
+    padding: 0 22px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.22);
     cursor: pointer; /* добавляем "пальчик" при наведении на кнопку "Добавить задачу" */
+    transition: transform 0.2s ease;
+    /* Эта запись означает:
+    анимировать только transform,
+    за 0.2s,
+    с плавным ускорением и замедлением через ease. */
+}
+
+.add-task:hover {
+    transform: translateY(-1px);
 }
 
 .filter-highlighted{
